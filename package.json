@@ -1,0 +1,30 @@
+{
+  "name": "react-from-scratch",
+  "version": "1.0.0",
+  "description": "Learning React From Scretch to Production Ready",
+  "keywords": [
+    "React"
+  ],
+  "homepage": "https://github.com/toxic-programmer-cell/react-from-scratch#readme",
+  "bugs": {
+    "url": "https://github.com/toxic-programmer-cell/react-from-scratch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toxic-programmer-cell/react-from-scratch.git"
+  },
+  "license": "ISC",
+  "author": "Rohit Mahto",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "dom": "^0.0.3",
+    "react": "^19.1.1"
+  }
+}
