@@ -15,8 +15,8 @@
   },
   "license": "ISC",
   "author": "Rohit Mahto",
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "App.js",
   "scripts": {
     "test": "jest"
   },
