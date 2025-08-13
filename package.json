@@ -16,15 +16,16 @@
   "license": "ISC",
   "author": "Rohit Mahto",
   "type": "module",
-  "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "devDependencies": {
     "parcel": "^2.15.4"
   },
   "dependencies": {
-    "dom": "^0.0.3",
-    "react": "^19.1.1"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   }
 }
