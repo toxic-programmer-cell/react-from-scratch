@@ -1,0 +1,41 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 2px;
+    border: 1px solid gray;
+}
+
+.logo-container {
+    height: 50px;
+    width: 50px;
+}
+
+.logo-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.nav-link {
+    display: flex;
+}
+
+.nav-link>ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link>ul>li {
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+}
+
+.nav-link>ul>li:hover {
+    text-decoration: underline;
+}
