@@ -178,29 +178,26 @@
   .table {
     display: table;
   }
-  .w-2xs {
-    width: var(--container-2xs);
+  .h-\[40px\] {
+    height: 40px;
   }
-  .w-\[20px\] {
-    width: 20px;
+  .h-\[200px\] {
+    height: 200px;
+  }
+  .h-auto {
+    height: auto;
+  }
+  .h-full {
+    height: 100%;
   }
   .w-full {
     width: 100%;
   }
-  .min-w-\[100px\] {
-    min-width: 100px;
-  }
   .min-w-\[200px\] {
     min-width: 200px;
   }
-  .min-w-\[300px\] {
-    min-width: 300px;
-  }
   .flex-1 {
     flex: 1;
-  }
-  .flex-2 {
-    flex: 2;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -211,14 +208,8 @@
   .resize {
     resize: both;
   }
-  .flex-col {
-    flex-direction: column;
-  }
   .flex-wrap {
     flex-wrap: wrap;
-  }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
@@ -232,6 +223,9 @@
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .object-cover {
+    object-fit: cover;
   }
   .underline {
     text-decoration-line: underline;
@@ -250,16 +244,6 @@
   }
   .md\:max-w-\[250px\] {
     @media (width >= 48rem) {
-      max-width: 250px;
-    }
-  }
-  .xl\:w-\[250px\] {
-    @media (width >= 80rem) {
-      width: 250px;
-    }
-  }
-  .xl\:max-w-\[250px\] {
-    @media (width >= 80rem) {
       max-width: 250px;
     }
   }
