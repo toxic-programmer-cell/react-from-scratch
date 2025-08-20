@@ -1,52 +1,3 @@
-import react from "react";
-import reactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header-container">
-      <div className="logo-container">
-        <img
-          src="https://w7.pngwing.com/pngs/664/210/png-transparent-uber-eats-muncheez-delivery-online-food-ordering-food-delivery-food-logo-uber-eats.png"
-          alt="logo"
-        />
-      </div>
-      <div className="nav-link">
-        <ul>
-          <li>About</li>
-          <li>Menu</li>
-          <li>Offers</li>
-          <li>cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestorentCard = ({ resData }) => {
-  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
-    resData.info;
-  return (
-    <div className="card-container flex-1 hover:border rounded-2xl overflow-hidden min-w-[200px] md:max-w-[250px] cursor-pointer h-auto">
-      <div className="card-image w-full h-[200px]">
-        <img
-          className="w-full h-full object-cover"
-          src={
-            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-            cloudinaryImageId
-          }
-          alt="food"
-        />
-      </div>
-      <div className="card-content m-2">
-        <h3>{name}</h3>
-        <p>{cuisines.join(", ")}</p>
-        <p>Rating: {avgRating}</p>
-        <p>{costForTwo}</p>
-      </div>
-    </div>
-  );
-};
-
 const resList = [
   {
     info: {
@@ -443,31 +394,4 @@ const resList = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div id="body-container">
-      <div className="search-container">
-        <input type="text" placeholder="Search" />
-      </div>
-      <div className="restorent-container ml-5 mr-5">
-        <div className="restorent-card flex gap-4 flex-wrap">
-          {resList.map((restaurant) => (
-            <RestorentCard key={restaurant.info.id} resData={restaurant} />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const FoodApp = () => {
-  return (
-    <div id="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = reactDOM.createRoot(document.getElementById("root"));
-root.render(<FoodApp />);
+export default resList;
