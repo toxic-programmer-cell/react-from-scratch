@@ -6,7 +6,7 @@ const Body = () => {
   const [restaurants, setRestaurants] = useState(resList);
   return (
     <div id="body-container">
-      <div className="search-container">
+      <div className="filter-container">
         <button
           className="p-2 border m-1.5 rounded-md bg-amber-500 font-bold cursor-pointer"
           onClick={() => {
