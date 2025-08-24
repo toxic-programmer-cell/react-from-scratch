@@ -1,6 +1,6 @@
 import RestorentCard from "./RestorentCard";
-import resList from "../util/dumyData";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -31,14 +31,28 @@ const Body = () => {
     // console.log(restaurantsData);
     setRestaurants(restaurantsData);
   };
+
+  //Conditional Rendering
+  if (restaurants.length == 0) {
+    return (
+      <div className="flex flex-wrap gap-6 mx-[66px] mt-[20px]">
+        {Array(8)
+          .fill("")
+          .map((_, index) => (
+            <Shimmer key={index} />
+          ))}
+      </div>
+    );
+  }
+
   return (
     <div id="body-container">
       <div className="filter-container">
         <button
           className="p-2 border m-1.5 rounded-md bg-amber-500 font-bold cursor-pointer hover:bg-amber-300"
           onClick={() => {
-            const filteredResturents = resList.filter(
-              (res) => res.info.avgRating > 4
+            const filteredResturents = restaurants.filter(
+              (res) => res.avgRating > 4
             );
             setRestaurants(filteredResturents);
           }}
@@ -46,8 +60,8 @@ const Body = () => {
           Top Rated Restorent
         </button>
       </div>
-      <div className="restorent-container ml-5 mr-5">
-        <div className="restorent-card flex gap-4 flex-wrap">
+      <div className="restorent-container mx-16 flex justify-center">
+        <div className="restorent-card flex gap-2 flex-wrap mx-auto">
           {restaurants.map((restaurant) => (
             <RestorentCard key={restaurant?.id} resData={restaurant} />
           ))}
