@@ -1,6 +1,6 @@
 const Shimmer = () => {
   return (
-    <div className="w-3xs rounded-2xl  bg-white p-4 shadow-sm animate-pulse">
+    <div className="w-3xs rounded-2xl ease-in-out bg-white p-4 shadow-sm animate-pulse">
       {/* image */}
       <div className="h-40 w-full rounded-xl bg-gray-200" />
 

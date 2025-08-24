@@ -47,7 +47,17 @@ const Body = () => {
 
   return (
     <div id="body-container">
-      <div className="filter-container">
+      <div className="filter-container flex justify-between m-4 mx-[30px] align-center">
+        <div className="flex align-center my-2 ">
+          <input
+            type="text"
+            placeholder="Search"
+            className="border rounded-l-md px-2 outline-0 "
+          />
+          <button className="border border-l-0 rounded-r-md px-2 bg-amber-300 font-bold cursor-pointer">
+            Search
+          </button>
+        </div>
         <button
           className="p-2 border m-1.5 rounded-md bg-amber-500 font-bold cursor-pointer hover:bg-amber-300"
           onClick={() => {
