@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -50,11 +51,25 @@ const Body = () => {
       <div className="filter-container flex justify-between m-4 mx-[30px] align-center">
         <div className="flex align-center my-2 ">
           <input
+            className="border rounded-l-md px-2 outline-0 "
             type="text"
             placeholder="Search"
-            className="border rounded-l-md px-2 outline-0 "
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
           />
-          <button className="border border-l-0 rounded-r-md px-2 bg-amber-300 font-bold cursor-pointer">
+          <button
+            className="border border-l-0 rounded-r-md px-2 bg-amber-300 font-bold cursor-pointer"
+            onClick={() => {
+              console.log(restaurants);
+              const filterData = restaurants.filter((res) => {
+                return res?.name
+                  ?.toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+              console.log(filterData);
+              setRestaurants(filterData);
+            }}
+          >
             Search
           </button>
         </div>
