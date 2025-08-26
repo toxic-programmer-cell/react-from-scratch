@@ -12,9 +12,10 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
+    const corsProxy = "https://corsproxy.io/";
     const url =
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-    const data = await fetch(url);
+    const data = await fetch(corsProxy + url);
 
     const json = await data.json();
     // console.log(json?.data?.cards[9]?.card?.card?.info);
