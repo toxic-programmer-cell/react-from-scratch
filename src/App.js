@@ -1,7 +1,8 @@
-import react from "react";
 import reactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import About from "./pages/About";
 
 const FoodApp = () => {
   return (
@@ -12,5 +13,16 @@ const FoodApp = () => {
   );
 };
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <FoodApp />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+]);
+
 const root = reactDOM.createRoot(document.getElementById("root"));
-root.render(<FoodApp />);
+root.render(<RouterProvider router={appRouter} />);
