@@ -18,11 +18,9 @@ const Body = () => {
     const data = await fetch(corsProxy + url);
 
     const json = await data.json();
-    // console.log(json?.data?.cards[9]?.card?.card?.info);
 
     const restaurantsData =
       json?.data?.cards[4]?.card?.card.gridElements?.infoWithStyle?.restaurants;
-    console.log(restaurantsData);
     // ------Remove duplicate restaurants based on their ID------
     // const uniqueRestaurants = Array.from(
     //   new Map(restaurantsData.map((item) => [item.id, item])).values()
