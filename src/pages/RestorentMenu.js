@@ -22,21 +22,19 @@ const RestorentMenu = () => {
   // const resName = resMenu[0]?.card?.card.text;
   const { name, avgRating, areaName, city, costForTwoMessage } =
     resMenu[2]?.card?.card?.info;
-  const recomendedCard =
+  const { itemCards } =
     resMenu[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-  // console.log(recomendedCard.itemCards);
-  // const menuData = recomendedCard.itemCards.map((item) => item?.card?.info);
-  // console.log("menu data", menuData);
+
   return (
-    <div>
+    <div className="mx-[150px]">
       <h1>{name}</h1>
       <p>Rating: {avgRating} </p>
       <p>
         {areaName}, {city}, {costForTwoMessage}
       </p>
-      <div className="mx-[150px]">
-        <h3>{recomendedCard.title}</h3>
-        {recomendedCard.itemCards.map((item) => (
+      <div>
+        <h3>{itemCards.title}</h3>
+        {itemCards.map((item) => (
           <div
             key={item?.card?.info?.id}
             className="flex border-b-1  px-5 py-3"
