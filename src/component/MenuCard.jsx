@@ -3,14 +3,14 @@ import { MENU_IMG } from "../util/constant";
 
 const MenuCard = ({ menuData }) => {
   console.log("menu data", menuData);
-  const { name, defaultPrice, ratings, description, imageId } = menuData;
+  const { name, defaultPrice, ratings, description, imageId, price } = menuData;
   return (
     <div className="flex justify-between w-full gap-10">
       <div>
         <p>
           <strong>{name}</strong>
         </p>
-        <p>₹{defaultPrice / 100}</p>
+        <p>₹{defaultPrice / 100 || price / 100}</p>
         <p>
           Rating:{" "}
           <span className="text-blue-600 font-bold">
