@@ -10,6 +10,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchData();
+    console.log(restaurants);
   }, []);
 
   const fetchData = async () => {
@@ -21,7 +22,8 @@ const Body = () => {
     const json = await data.json();
 
     const restaurantsData =
-      json?.data?.cards[4]?.card?.card.gridElements?.infoWithStyle?.restaurants;
+      json?.data?.cards[4]?.card?.card.gridElements?.infoWithStyle
+        ?.restaurants || [];
     // ------Remove duplicate restaurants based on their ID------
     // const uniqueRestaurants = Array.from(
     //   new Map(restaurantsData.map((item) => [item.id, item])).values()
@@ -77,12 +79,13 @@ const Body = () => {
           Top Rated Restorent
         </button>
       </div>
-      <div className="restorent-container mx-16 flex justify-center">
-        <div className="restorent-card flex gap-2 flex-wrap mx-auto">
+      <div className="restorent-container px-4 sm:px-8 lg:px-16 py-6">
+        <div className="restorent-card grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredResturents.map((restaurant) => (
             <NavLink
               to={"/restaurent/" + restaurant?.info?.id}
               key={restaurant?.info?.id}
+              className="block"
             >
               <RestorentCard resData={restaurant} />
             </NavLink>

@@ -5,26 +5,28 @@ const RestorentCard = ({ resData }) => {
   const { name, cloudinaryImageId, cuisines, avgRating, costForTwo, sla } =
     resData.info;
   return (
-    <div className="card-container flex-1 hover:shadow-lg ease-in-out rounded-2xl overflow-hidden min-w-[250px] md:max-w-[250px] cursor-pointer h-auto shadow-md jus mx-2.5 mb-5">
+    <div className="card-container bg-white shadow-md rounded-lg overflow-hidden flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
       <div className="card-image w-full h-[200px]">
         <img
-          className="w-full h-full object-cover"
+          className="w-full h-40 object-cover"
           src={RES_URL + cloudinaryImageId}
           // src={image}
           alt="food"
         />
       </div>
-      <div className="card-content m-2 gap-1">
-        <h3>
+      <div className="card-content p-4">
+        <h3 className="text-lg font-semibold text-gray-800">
           <strong>{name}</strong>
         </h3>
 
-        <p> {cuisines.join(", ")} </p>
-        <p>Rating: {avgRating} </p>
+        <p className="text-sm text-gray-600"> {cuisines.join(", ")} </p>
+        <div className="mt-2 flex justify-between text-sm text-gray-500">
+          <span>⭐ {avgRating} </span>
+          <span>Deliver: {sla?.slaString} </span>
+        </div>
         <p>
           <strong className="text-red-600"> {costForTwo} </strong>
         </p>
-        <p>Deliver: {sla?.slaString}</p>
       </div>
     </div>
   );
