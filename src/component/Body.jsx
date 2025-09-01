@@ -1,6 +1,7 @@
 import RestorentCard from "./RestorentCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { NavLink } from "react-router";
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -79,7 +80,12 @@ const Body = () => {
       <div className="restorent-container mx-16 flex justify-center">
         <div className="restorent-card flex gap-2 flex-wrap mx-auto">
           {filteredResturents.map((restaurant) => (
-            <RestorentCard key={restaurant?.info?.id} resData={restaurant} />
+            <NavLink
+              to={"/restaurent/" + restaurant?.info?.id}
+              key={restaurant?.info?.id}
+            >
+              <RestorentCard resData={restaurant} />
+            </NavLink>
           ))}
         </div>
       </div>
